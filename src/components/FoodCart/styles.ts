@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+type FoodProps = {
+  available: boolean;
+}
+
+export const Container = styled.div<FoodProps>`
   background: #f0f0f5;
   border-radius: 8px;
 
@@ -25,6 +29,7 @@ export const Container = styled.div`
   }
 
   section.body {
+    height: 205px;
     padding: 30px;
 
     h2 {
@@ -113,8 +118,8 @@ export const Container = styled.div`
           border-radius: 16px;
 
           &:before {
-            position: absolute;
             content: '';
+            position: absolute;
             height: 20px;
             width: 40px;
             left: 8px;
